@@ -1,15 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
 import {useEffect} from 'react'
+import axios from 'axios'
 
 function App() {
 
   useEffect(()=>{
-    fetch('https://8a8zekrutl.execute-api.ap-south-1.amazonaws.com/prod/books',{
-      method: 'GET'
-    }).then((res)=>{
+
+    axios.get('https://8a8zekrutl.execute-api.ap-south-1.amazonaws.com/prod/books').then((res)=>{
       console.log(res)
     })
+    
   },[])
 
   return (
